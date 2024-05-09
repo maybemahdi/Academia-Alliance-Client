@@ -3,7 +3,7 @@ const Features = () => {
     <section className="text-base-content">
       <div className="container py-10 mx-auto">
         <h1 className="text-2xl text-center font-semibold capitalize lg:text-3xl ">
-          explore our <br /> awesome{" "}
+          Explore our <br /> awesome{" "}
           <span className="text-[#CA8787]">Features</span>
         </h1>
 
