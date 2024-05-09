@@ -16,7 +16,7 @@ const Slide = ({ image, text, para }) => {
           <p className="font-normal text-center my-5 w-[90%] md:w-[70%] mx-auto text-[#ddd]">{para}</p>
           <br />
           <Link to={'/assignments'} className="px-5 py-4 mt-4 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-[#A87676] rounded-md lg:w-auto hover:bg-[#a76c6c] focus:outline-none focus:bg-gray-500">
-            All Assignment
+            Do Assignment
           </Link>
         </div>
       </div>

@@ -147,7 +147,7 @@ const Nav = () => {
   );
 
   return (
-    <div className="bg-[#A87676]">
+    <div className="bg-[#A87676] z-20">
       <div
         className={`transition-all z-20 duration-500 py-5 ${
           openNav ? "mb-[230px]" : ""
@@ -246,21 +246,21 @@ const Nav = () => {
                   </div>
                   <ul
                     tabIndex={0}
-                    className="mt-3 z-[1] p-2 space-y-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+                    className="mt-3 z-20 p-3 space-y-2 shadow menu menu-sm dropdown-content bg-base-100 rounded w-56"
                   >
-                    <li className="py-3">
-                      <NavLink
+                    <li className="py-3 bg-[#ddd] font-semibold transition-all duration-300 hover:bg-[#E1ACAC] rounded">
+                      <Link
                         className={({ isActive, isPending }) =>
                           isPending
                             ? "pending"
                             : isActive
-                            ? "rounded-none border py-3 border-black focus:bg-[#8e914a00] bg-[#ffffff00] focus:text-[#000000] text-[#000000]"
-                            : "text-black no-underline"
+                            ? "rounded-none py-3 text-[#000000]"
+                            : "text-black hover:bg-[#E1ACAC] transition-all duration-300 hover:bg-[#e1acac00] no-underline"
                         }
                         to="/my-attempt"
                       >
                         My Attempted Assignment
-                      </NavLink>
+                      </Link>
                     </li>
                     <button
                       onClick={() => {
@@ -268,7 +268,7 @@ const Nav = () => {
                           toast.success("Logged out successfully")
                         );
                       }}
-                      className="bg-[#b9947000] font-semibold border border-black no-underline px-3 py-2 cursor-pointer transition-all duration-300 text-black hover:bg-[#E1ACAC]"
+                      className="bg-[#b9947000] rounded font-semibold border border-black no-underline px-3 py-2 cursor-pointer transition-all duration-300 text-black hover:bg-[#E1ACAC]"
                     >
                       Log Out
                     </button>
