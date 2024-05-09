@@ -145,7 +145,7 @@ const Nav = () => {
       </li>
     </>
   );
-  
+
   return (
     <div className="bg-[#A87676]">
       <div
@@ -191,11 +191,11 @@ const Nav = () => {
             <div
               className={`${
                 openNav ? "" : "hidden"
-              } my-4 bg-[#A87676] w-full absolute left-0 top-20 flex flex-col gap-4 p-2 rounded-md`}
+              } my-4 bg-[#A87676] w-full absolute left-0 top-20 flex flex-col gap-4 p-2`}
             >
               <ul className="menu">{navLinksB}</ul>
             </div>
-            <Link className="md:text-2xl text-xl w-fit font-bold">
+            <Link className="md:text-2xl text-balance font-bold">
               Academia Alliance
             </Link>
           </div>
