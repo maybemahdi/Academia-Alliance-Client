@@ -69,7 +69,7 @@ const Login = () => {
 
         <div className="w-full px-6 py-8 md:px-8 lg:w-1/2">
           <div className="flex justify-center mx-auto">
-            <FaUserAlt className="w-12 h-12" />
+            <FaUserAlt className="w-12 text-[#CA8787] h-12" />
           </div>
 
           <p className="mt-3 text-xl text-center text-gray-600 ">

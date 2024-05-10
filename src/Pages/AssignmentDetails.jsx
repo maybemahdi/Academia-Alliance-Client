@@ -16,12 +16,16 @@ const AssignmentDetails = () => {
     const note = form.note.value;
     const status = "Pending";
     const examineeEmail = user?.email;
+    const marks = assignment.marks;
+    const examineeName = user?.displayName;
     const data = {
       assignment_title,
+      marks,
       submittedLink,
       note,
       status,
       examineeEmail,
+      examineeName,
     };
     // console.log(data);
     axios

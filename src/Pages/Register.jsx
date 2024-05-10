@@ -10,7 +10,6 @@ import Loader from "../Components/Loader";
 const Register = () => {
   const {
     createUser,
-    user,
     loading,
     setUpdate,
     googleLogin,
