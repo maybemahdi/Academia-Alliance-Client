@@ -15,7 +15,7 @@ const CreateAssignment = () => {
     const description = form.description.value;
     const marks = form.marks.value;
     const thumbnail = form.thumbnail.value;
-    const difficulty = form.difficulty.value.toLowerCase();
+    const difficulty = form.difficulty.value;
     const dueDate = startDate;
     const assignment_creator = user?.email;
     const data = {
@@ -25,20 +25,22 @@ const CreateAssignment = () => {
       thumbnail,
       difficulty,
       dueDate,
-      assignment_creator
+      assignment_creator,
     };
     // console.log(data)
-    axios.post(`${import.meta.env.VITE_API_URL}/add-assignment`, data)
-    .then(res => {
-        console.log(res.data)
-        if(res.data.insertedId){
-            Swal.fire({
-                title: "Good job!",
-                text: "You just created an assignment!",
-                icon: "success"
-              });
+    axios
+      .post(`${import.meta.env.VITE_API_URL}/add-assignment`, data)
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.insertedId) {
+          form.reset();
+          Swal.fire({
+            title: "Good job!",
+            text: "You just created an assignment!",
+            icon: "success",
+          });
         }
-    })
+      });
   };
   return (
     <div className="my-10">
@@ -108,9 +110,9 @@ const CreateAssignment = () => {
               id="difficulty"
               className="w-full p-2 border rounded-md"
             >
-              <option value="Easy">Easy</option>
-              <option value="Medium">Medium</option>
-              <option value="Hard">Hard</option>
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
             </select>
           </div>
           <div>
