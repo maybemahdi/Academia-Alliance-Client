@@ -1,11 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import Loader from "../Components/Loader";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import Swal from "sweetalert2";
 
 const PendingAssignment = () => {
   const queryStatus = "Pending";
+  const navigate = useNavigate();
   const [dynamicModalData, setDynamicModalData] = useState([]);
   const { isLoading, refetch, data } = useQuery({
     queryKey: ["pendingAssignments"],
@@ -21,6 +23,30 @@ const PendingAssignment = () => {
   if (isLoading) return <Loader />;
   const handleDynamicData = (d) => {
     setDynamicModalData(d);
+  };
+  const handleMarkSubmission = (e, id) => {
+    e.preventDefault();
+    const form = e.target;
+    const obtainedMarks = form.marks.value;
+    const feedback = form.feedback.value;
+    const status = "Completed";
+    const data = { obtainedMarks, feedback, status };
+    // console.log(data)
+    axios
+      .put(`${import.meta.env.VITE_API_URL}/update-marks/${id}`, data)
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.modifiedCount > 0) {
+          form.reset();
+          refetch();
+          navigate(-1);
+          Swal.fire({
+            title: "Good job!",
+            text: "Assignment Marks Has been Updated!",
+            icon: "success",
+          });
+        }
+      });
   };
   return (
     <div className="my-20">
@@ -66,7 +92,9 @@ const PendingAssignment = () => {
                       className="text-blue-500 font-bold"
                       to={dynamicModalData?.submittedLink}
                     >
-                    {dynamicModalData?.submittedLink?.length > 40? dynamicModalData?.submittedLink?.slice(0,40) : dynamicModalData?.submittedLink}
+                      {dynamicModalData?.submittedLink?.length > 40
+                        ? dynamicModalData?.submittedLink?.slice(0, 40)
+                        : dynamicModalData?.submittedLink}
                       {/* {dynamicModalData.submittedLink} */}
                     </Link>
                   </span>
@@ -79,22 +107,28 @@ const PendingAssignment = () => {
                 </p>
               </div>
               <form
-              //   onSubmit={handleAssignmentSubmission}
+                onSubmit={(e) => handleMarkSubmission(e, dynamicModalData._id)}
               >
-                <p className="font-semibold text-base mb-3">Submission Link</p>
+                <p className="font-semibold text-base mb-3">
+                  Give Marks Out Of{" "}
+                  <span className="font-bold text-blue-500">
+                    {dynamicModalData.marks}
+                  </span>
+                </p>
                 <input
-                  name="link"
-                  type="text"
+                  name="marks"
+                  type="number"
                   required
-                  placeholder="PDF/DOC Link"
+                  placeholder="Give Marks"
                   className="input input-bordered w-full"
                 />
                 <p className="font-semibold text-base mt-4 my-3">
-                  Write Your Note
+                  Write Feedback
                 </p>
                 <textarea
-                  placeholder="Quick Note"
-                  name="note"
+                  placeholder="Feedback"
+                  name="feedback"
+                  required
                   className="textarea textarea-bordered textarea-sm w-full"
                 ></textarea>
                 <button

@@ -39,7 +39,7 @@ const MySubmittedAssignment = () => {
                 <td>
                   <p
                     className={`w-fit px-2 py-1 font-semibold rounded-[20px] ${
-                      d.status === "Completed" ? "bg-green-400" : "bg-yellow-400"
+                      d.status === "Completed" ? "bg-green-600" : "bg-yellow-600"
                     }`}
                   >
                     {d.status}
@@ -49,7 +49,7 @@ const MySubmittedAssignment = () => {
                 <td>
                   <p
                     className={`w-fit px-2 py-1 font-semibold rounded-[20px] ${
-                      d.obtainedMarks ? "bg-green-400" : "bg-yellow-400"
+                      d.obtainedMarks ? "bg-green-600" : "bg-yellow-600"
                     }`}
                   >
                     {d.obtainedMarks ? d.obtainedMarks : "Pending"}
@@ -58,7 +58,7 @@ const MySubmittedAssignment = () => {
                 <td>
                   <p
                     className={`w-fit px-2 py-1 font-semibold rounded-[20px] ${
-                      d.feedback ? "bg-green-400" : "bg-yellow-400"
+                      d.feedback ? "bg-green-600" : "bg-yellow-600"
                     }`}
                   >
                     {d.feedback ? d.feedback : "Pending"}
