@@ -40,8 +40,10 @@ export const router = createBrowserRouter([
         element: <Assignments />,
       },
       {
-        path: "/update-assignment",
+        path: "/update-assignment/:id",
         element: <UpdatedAssignment />,
+        loader: ({ params }) =>
+          fetch(`${import.meta.env.VITE_API_URL}/assignment/${params.id}`),
       },
     ],
   },

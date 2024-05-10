@@ -3,6 +3,7 @@ import useAuth from "../Hooks/useAuth";
 import Swal from "sweetalert2";
 import axios from "axios";
 import useRefetch from "../Hooks/useRefetch";
+import { Link } from "react-router-dom";
 
 const AssignmentCard = ({ assignment, refetch }) => {
   const { user } = useAuth();
@@ -47,9 +48,6 @@ const AssignmentCard = ({ assignment, refetch }) => {
       }
     });
   };
-  const handleUpdate = (id) => {
-    
-  }
   return (
     <div className="rounded cursor-pointer hover:scale-105 transition-all duration-500  shadow-md p-4">
       <div className="flex flex-col mb-6 gap-1">
@@ -67,9 +65,9 @@ const AssignmentCard = ({ assignment, refetch }) => {
         >
           Delete
         </button>
-        <button onClick={()=>handleUpdate(_id)} className="btn btn-outline hover:bg-[#A87676] hover:border-[#A87676]">
+        <Link to={`/update-assignment/${_id}`} className="btn btn-outline hover:bg-[#A87676] hover:border-[#A87676]">
           Update
-        </button>
+        </Link>
         <button className="btn btn-outline hover:bg-[#A87676] hover:border-[#A87676]">
           View Assignment
         </button>
