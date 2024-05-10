@@ -2,7 +2,6 @@ import toast from "react-hot-toast";
 import useAuth from "../Hooks/useAuth";
 import Swal from "sweetalert2";
 import axios from "axios";
-import useRefetch from "../Hooks/useRefetch";
 import { Link } from "react-router-dom";
 
 const AssignmentCard = ({ assignment, refetch }) => {
@@ -42,7 +41,7 @@ const AssignmentCard = ({ assignment, refetch }) => {
                 text: "Your Assignment has been deleted.",
                 icon: "success",
               });
-              refetch()
+              refetch();
             }
           });
       }
@@ -65,12 +64,18 @@ const AssignmentCard = ({ assignment, refetch }) => {
         >
           Delete
         </button>
-        <Link to={`/update-assignment/${_id}`} className="btn btn-outline hover:bg-[#A87676] hover:border-[#A87676]">
+        <Link
+          to={`/update-assignment/${_id}`}
+          className="btn btn-outline hover:bg-[#A87676] hover:border-[#A87676]"
+        >
           Update
         </Link>
-        <button className="btn btn-outline hover:bg-[#A87676] hover:border-[#A87676]">
+        <Link
+          to={`/assignment-details/${_id}`}
+          className="btn btn-outline hover:bg-[#A87676] hover:border-[#A87676]"
+        >
           View Assignment
-        </button>
+        </Link>
       </div>
     </div>
   );

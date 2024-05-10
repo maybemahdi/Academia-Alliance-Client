@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { HiMiniBars3CenterLeft } from "react-icons/hi2";
 import { RxCross2 } from "react-icons/rx";
+import logo from "../../src/assets/logo.png"
 import toast from "react-hot-toast";
 
 const Nav = () => {
@@ -195,8 +196,8 @@ const Nav = () => {
             >
               <ul className="menu">{navLinksB}</ul>
             </div>
-            <Link className="md:text-2xl text-balance font-bold">
-              Academia Alliance
+            <Link className="">
+              <img className="w-40 -ml-5 md:p-0" src={logo} alt="" />
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">

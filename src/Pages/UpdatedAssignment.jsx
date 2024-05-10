@@ -21,7 +21,7 @@ const UpdatedAssignment = () => {
     const thumbnail = form.thumbnail.value;
     const difficulty = form.difficulty.value;
     const dueDate = startDate;
-    const assignment_creator = user?.email;
+    const assignment_creator = assignment.assignment_creator;
     const data = {
       assignment_title,
       description,

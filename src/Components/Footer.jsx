@@ -1,7 +1,10 @@
+import logo from "../../src/assets/logo.png";
+
 const Footer = () => {
   return (
-    <footer className="footer mt-16 footer-center p-10 bg-base-200 text-base-content rounded">
-      <nav className="grid grid-flow-col gap-4">
+    <footer className="footer mt-16 footer-center p-10 bg-[#A87676] text-black rounded">
+      <img className="w-40" src={logo} alt="" />
+      <nav className="grid grid-flow-col font-semibold gap-4">
         <a className="link link-hover">About us</a>
         <a className="link link-hover">Contact</a>
         <a className="link link-hover">Jobs</a>
@@ -45,7 +48,10 @@ const Footer = () => {
         </div>
       </nav>
       <aside>
-        <p>Copyright © 2024 - All right reserved by <span className="font-bold text-[#CA8787]">Academia Alliance</span></p>
+        <p>
+          Copyright © 2024 - All right reserved by{" "}
+          <span className="font-bold text-[#E1ACAC]">Academia Alliance</span>
+        </p>
       </aside>
     </footer>
   );
