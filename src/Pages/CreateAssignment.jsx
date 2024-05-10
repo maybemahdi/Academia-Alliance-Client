@@ -4,6 +4,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import useAuth from "../Hooks/useAuth";
 import axios from "axios";
 import Swal from "sweetalert2";
+import toast from "react-hot-toast";
 
 const CreateAssignment = () => {
   const { user } = useAuth();
@@ -18,6 +19,24 @@ const CreateAssignment = () => {
     const difficulty = form.difficulty.value;
     const dueDate = startDate;
     const assignment_creator = user?.email;
+    
+    //validation
+    if (!assignment_title) {
+      return toast.error("You Must Provide Assignment Title");
+    }
+    if (!description) {
+      return toast.error("You Must Provide Assignment Description");
+    }
+    if (!marks) {
+      return toast.error("You Must Provide Assignment Full Marks");
+    }
+    if (!thumbnail) {
+      return toast.error("You Must Provide Assignment Thumbnail URL");
+    }
+    if (!difficulty) {
+      return toast.error("You Must Provide Assignment Difficulty Level");
+    }
+
     const data = {
       assignment_title,
       description,
@@ -61,7 +80,7 @@ const CreateAssignment = () => {
               type="text"
               placeholder="Assignment Title"
               name="title"
-              required
+              // required
             />
           </div>
           <div>
@@ -73,7 +92,7 @@ const CreateAssignment = () => {
               type="text"
               placeholder="Assignment Description"
               name="description"
-              required
+              // required
             />
           </div>
           <div>
@@ -86,7 +105,7 @@ const CreateAssignment = () => {
               defaultValue={60}
               placeholder="Assignment Marks"
               name="marks"
-              required
+              // required
             />
           </div>
           <div>
@@ -98,7 +117,7 @@ const CreateAssignment = () => {
               type="text"
               placeholder="Thumbnail URL"
               name="thumbnail"
-              required
+              // required
             />
           </div>
           <div>
@@ -108,6 +127,7 @@ const CreateAssignment = () => {
             <select
               name="difficulty"
               id="difficulty"
+              required
               className="w-full p-2 border rounded-md"
             >
               <option value="easy">Easy</option>

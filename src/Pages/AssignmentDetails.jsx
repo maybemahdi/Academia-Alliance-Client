@@ -2,6 +2,7 @@ import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import axios from "axios";
 import Swal from "sweetalert2";
+import toast from "react-hot-toast";
 
 const AssignmentDetails = () => {
   const assignment = useLoaderData();
@@ -18,6 +19,12 @@ const AssignmentDetails = () => {
     const examineeEmail = user?.email;
     const marks = assignment.marks;
     const examineeName = user?.displayName;
+    if (!submittedLink) {
+      return toast.error("You Must Provide Assignment Link");
+    }
+    if (!note) {
+      return toast.error("You Must Provide A Note");
+    }
     const data = {
       assignment_title,
       marks,
@@ -81,7 +88,7 @@ const AssignmentDetails = () => {
           </div>
           <dialog id="my_modal_2" className="modal">
             <div className="modal-box">
-              <h3 className="font-bold mb-4 text-lg">
+              <h3 className="font-bold mb-4 text-xl">
                 Submit Your Assignment Here!
               </h3>
               <form onSubmit={handleAssignmentSubmission}>
