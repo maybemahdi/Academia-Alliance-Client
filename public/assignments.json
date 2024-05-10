@@ -1,0 +1,137 @@
+[
+  {
+    "assignment_title": "Introduction to JavaScript",
+    "description": "Learn the basics of JavaScript programming language.",
+    "marks": 60,
+    "thumbnail": "https://images.unsplash.com/photo-1495465798138-718f86d1a4bc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "difficulty": "easy",
+    "dueDate": "2024-05-20",
+    "assignment_creator": "mh7266391@gmail.com"
+  },
+  {
+    "assignment_title": "React.js Project",
+    "description": "Build a simple project using React.js library.",
+    "marks": 60,
+    "thumbnail": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "difficulty": "medium",
+    "dueDate": "2024-06-05",
+    "assignment_creator": "mh7266391@gmail.com"
+  },
+  {
+    "assignment_title": "Node.js REST API",
+    "description": "Create a RESTful API using Node.js and Express.",
+    "marks": 60,
+    "thumbnail": "https://plus.unsplash.com/premium_photo-1661717000345-f863e858a4e1?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "difficulty": "medium",
+    "dueDate": "2024-06-15",
+    "assignment_creator": "mh7266391@gmail.com"
+  },
+  {
+    "assignment_title": "MongoDB Database Design",
+    "description": "Design a database schema using MongoDB.",
+    "marks": 60,
+    "thumbnail": "https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "difficulty": "medium",
+    "dueDate": "2024-07-10",
+    "assignment_creator": "mh7266391@gmail.com"
+  },
+  {
+    "assignment_title": "Advanced CSS Techniques",
+    "description": "Explore advanced CSS techniques and layouts.",
+    "marks": 60,
+    "thumbnail": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "difficulty": "hard",
+    "dueDate": "2024-07-20",
+    "assignment_creator": "mh7266391@gmail.com"
+  },
+  {
+    "assignment_title": "HTML5 Canvas Drawing",
+    "description": "Learn to draw graphics using HTML5 Canvas.",
+    "marks": 60,
+    "thumbnail": "https://plus.unsplash.com/premium_photo-1683120640224-9e8e52ed7ab3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "difficulty": "medium",
+    "dueDate": "2024-08-05",
+    "assignment_creator": "mh7266391@gmail.com"
+  },
+  {
+    "assignment_title": "Python Data Analysis",
+    "description": "Analyze data using Python libraries like Pandas and NumPy.",
+    "marks": 60,
+    "thumbnail": "https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "difficulty": "medium",
+    "dueDate": "2024-08-15",
+    "assignment_creator": "mh7266391@gmail.com"
+  },
+  {
+    "assignment_title": "Django Web Development",
+    "description": "Build a web application using Django framework.",
+    "marks": 60,
+    "thumbnail": "https://plus.unsplash.com/premium_photo-1683887034146-c79058dbdcb1?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "difficulty": "medium",
+    "dueDate": "2024-09-10",
+    "assignment_creator": "mh7266391@gmail.com"
+  },
+  {
+    "assignment_title": "Data Structures in C++",
+    "description": "Implement common data structures using C++ programming language.",
+    "marks": 60,
+    "thumbnail": "https://images.unsplash.com/photo-1460518451285-97b6aa326961?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "difficulty": "hard",
+    "dueDate": "2024-09-20",
+    "assignment_creator": "mh7266391@gmail.com"
+  },
+  {
+    "assignment_title": "Artificial Intelligence Basics",
+    "description": "Introduction to artificial intelligence concepts and algorithms.",
+    "marks": 60,
+    "thumbnail": "https://plus.unsplash.com/premium_photo-1663099551213-8de7669cc2e3?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "difficulty": "medium",
+    "dueDate": "2024-10-05",
+    "assignment_creator": "mh7266391@gmail.com"
+  },
+  {
+    "assignment_title": "Network Security Fundamentals",
+    "description": "Learn about network security principles and techniques.",
+    "marks": 60,
+    "thumbnail": "https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "difficulty": "medium",
+    "dueDate": "2024-10-15",
+    "assignment_creator": "mh7266391@gmail.com"
+  },
+  {
+    "assignment_title": "iOS App Development",
+    "description": "Develop mobile applications for iOS platform using Swift.",
+    "marks": 60,
+    "thumbnail": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1784&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "difficulty": "hard",
+    "dueDate": "2024-11-10",
+    "assignment_creator": "mh7266391@gmail.com"
+  },
+  {
+    "assignment_title": "Android App Development",
+    "description": "Develop mobile applications for Android platform using Java or Kotlin.",
+    "marks": 60,
+    "thumbnail": "https://plus.unsplash.com/premium_photo-1681494154423-93ba20262dd4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "difficulty": "medium",
+    "dueDate": "2024-11-20",
+    "assignment_creator": "mh7266391@gmail.com"
+  },
+  {
+    "assignment_title": "Software Engineering Principles",
+    "description": "Learn about software engineering methodologies and best practices.",
+    "marks": 60,
+    "thumbnail": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "difficulty": "medium",
+    "dueDate": "2024-12-05",
+    "assignment_creator": "mh7266391@gmail.com"
+  },
+  {
+    "assignment_title": "Machine Learning Concepts",
+    "description": "Introduction to machine learning algorithms and techniques.",
+    "marks": 60,
+    "thumbnail": "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "difficulty": "medium",
+    "dueDate": "2024-12-15",
+    "assignment_creator": "mh7266391@gmail.com"
+  }
+]

@@ -15,7 +15,7 @@ const CreateAssignment = () => {
     const description = form.description.value;
     const marks = form.marks.value;
     const thumbnail = form.thumbnail.value;
-    const difficulty = form.difficulty.value;
+    const difficulty = form.difficulty.value.toLowerCase();
     const dueDate = startDate;
     const assignment_creator = user?.email;
     const data = {

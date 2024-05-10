@@ -6,6 +6,7 @@ import Register from "../Pages/Register";
 import Error from "../Pages/Error";
 import CreateAssignment from "../Pages/CreateAssignment";
 import PrivateRoute from "./PrivateRoute";
+import Assignments from "../Pages/Assignments";
 
 export const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ export const router = createBrowserRouter([
             <CreateAssignment />
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/assignments",
+        element: <Assignments />,
       },
     ],
   },
