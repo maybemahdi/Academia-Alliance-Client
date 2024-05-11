@@ -36,7 +36,9 @@ const AssignmentDetails = () => {
     };
     // console.log(data);
     axios
-      .post(`${import.meta.env.VITE_API_URL}/submit-assignment`, data)
+      .post(`${import.meta.env.VITE_API_URL}/submit-assignment`, data, {
+        withCredentials: true,
+      })
       .then((res) => {
         console.log(res.data);
         if (res.data.insertedId) {

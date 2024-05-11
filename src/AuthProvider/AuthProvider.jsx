@@ -8,7 +8,7 @@ import {
   import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
   import { createContext, useEffect, useState } from "react";
   import { auth } from "../Firebase/firebase.config";
-//   import axios from "axios";
+  import axios from "axios";
   
   export const AuthContext = createContext(null);
   const AuthProvider = ({ children }) => {
@@ -26,27 +26,27 @@ import {
   
     useEffect(() => {
       const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-        // const userEmail = currentUser?.email || user?.email;
-        // const loggedUser = { email: userEmail };
+        const userEmail = currentUser?.email || user?.email;
+        const loggedUser = { email: userEmail };
         setUser(currentUser);
         setLoading(false);
-        // if (currentUser) {
-        //   axios
-        //     .post(`${import.meta.env.VITE_API_URL}/jwt`, loggedUser, {
-        //       withCredentials: true,
-        //     })
-        //     .then((res) => {
-        //       console.log(res.data);
-        //     });
-        // } else {
-        //   axios
-        //     .get(`${import.meta.env.VITE_API_URL}/logout`, {
-        //       withCredentials: true,
-        //     })
-        //     .then((res) => {
-        //       console.log(res.data);
-        //     });
-        // }
+        if (currentUser) {
+          axios
+            .post(`${import.meta.env.VITE_API_URL}/jwt`, loggedUser, {
+              withCredentials: true,
+            })
+            .then((res) => {
+              console.log(res.data);
+            });
+        } else {
+          axios
+            .get(`${import.meta.env.VITE_API_URL}/logout`, {
+              withCredentials: true,
+            })
+            .then((res) => {
+              console.log(res.data);
+            });
+        }
       });
       return () => {
         unSubscribe();

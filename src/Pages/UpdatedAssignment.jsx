@@ -32,7 +32,9 @@ const UpdatedAssignment = () => {
       assignment_creator,
     };
     axios
-      .put(`${import.meta.env.VITE_API_URL}/update-assignment/${id}`, data)
+      .put(`${import.meta.env.VITE_API_URL}/update-assignment/${id}`, data, {
+        withCredentials: true,
+      })
       .then((res) => {
         console.log(res.data);
         if (res.data.modifiedCount > 0) {
@@ -42,7 +44,7 @@ const UpdatedAssignment = () => {
             text: "You just Updated this assignment!",
             icon: "success",
           });
-          navigate("/assignments")
+          navigate("/assignments");
         }
       });
   };

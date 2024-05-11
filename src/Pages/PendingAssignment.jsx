@@ -15,7 +15,8 @@ const PendingAssignment = () => {
       const { data } = await axios.get(
         `${
           import.meta.env.VITE_API_URL
-        }/pending-assignments?status=${queryStatus}`
+        }/pending-assignments?status=${queryStatus}`,
+        { withCredentials: true }
       );
       return data;
     },

@@ -9,7 +9,8 @@ const MySubmittedAssignment = () => {
     queryKey: ["mySubmittedAssignment"],
     queryFn: async () => {
       const { data } = await axios.get(
-        `${import.meta.env.VITE_API_URL}/mySubmitted?email=${user?.email}`
+        `${import.meta.env.VITE_API_URL}/mySubmitted?email=${user?.email}`,
+        { withCredentials: true }
       );
       return data;
     },
@@ -39,7 +40,9 @@ const MySubmittedAssignment = () => {
                 <td>
                   <p
                     className={`w-fit px-2 py-1 font-semibold rounded-[20px] ${
-                      d.status === "Completed" ? "bg-green-600" : "bg-yellow-600"
+                      d.status === "Completed"
+                        ? "bg-green-600"
+                        : "bg-yellow-600"
                     }`}
                   >
                     {d.status}
