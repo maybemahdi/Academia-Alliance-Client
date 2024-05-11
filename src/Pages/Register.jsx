@@ -1,21 +1,15 @@
-import { useContext } from "react";
+import useAuth from "../Hooks/useAuth";
 import { FaUserAlt } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
 import { updateProfile } from "firebase/auth";
 import { auth } from "../Firebase/firebase.config";
 import Loader from "../Components/Loader";
+import signUp from "../assets/signUp.png";
 
 const Register = () => {
-  const {
-    createUser,
-    loading,
-    setUpdate,
-    googleLogin,
-    update,
-    setLoading,
-  } = useContext(AuthContext);
+  const { createUser, loading, setUpdate, googleLogin, update, setLoading } =
+    useAuth();
   const navigate = useNavigate();
   const handleFirebaseError = (errorCode) => {
     switch (errorCode) {
@@ -28,7 +22,7 @@ const Register = () => {
     }
   };
 
-//   if (user) return navigate("/");
+  //   if (user) return navigate("/");
   if (loading) return <Loader />;
 
   const handleSubmit = (e) => {
@@ -251,7 +245,7 @@ const Register = () => {
         <div
           className="hidden bg-cover bg-center lg:block lg:w-1/2"
           style={{
-            backgroundImage: `url('https://i.ibb.co/MS5gJbc/photo-1600195077077-7c815f540a3d.jpg')`,
+            backgroundImage: `url(${signUp})`,
           }}
         ></div>
       </div>

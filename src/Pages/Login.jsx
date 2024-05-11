@@ -1,18 +1,17 @@
 import { FaUserAlt } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useContext } from "react";
 import toast from "react-hot-toast";
-import { AuthContext } from "../AuthProvider/AuthProvider";
+import login from "../assets/login.png"
 import Loader from "../Components/Loader";
+import useAuth from "../Hooks/useAuth"
 
 const Login = () => {
-  const { user, signIn, googleLogin, loading, setLoading } =
-    useContext(AuthContext);
+  const { signIn, googleLogin, loading, setLoading } = useAuth();
   // const emailRef = useRef(); // Add useRef for email input
   const navigate = useNavigate();
   const location = useLocation();
 
-//   if (user) return navigate("/");
+  //   if (user) return navigate("/");
   if (loading) return <Loader />;
 
   const handleFirebaseError = (errorCode) => {
@@ -59,11 +58,11 @@ const Login = () => {
 
   return (
     <div className="flex justify-center my-10 items-center min-h-[calc(100vh-306px)]">
-      <div className="flex w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg  lg:max-w-4xl ">
+      <div className="flex gap-10 w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg  lg:max-w-4xl ">
         <div
           className="hidden bg-cover bg-center lg:block lg:w-1/2"
           style={{
-            backgroundImage: `url('https://i.ibb.co/MS5gJbc/photo-1600195077077-7c815f540a3d.jpg')`,
+            backgroundImage: `url(${login})`,
           }}
         ></div>
 
