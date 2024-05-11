@@ -54,10 +54,10 @@ const AssignmentDetails = () => {
   return (
     <div className="my-10">
       <ScrollRestoration/>
-      <h2 className="text-base-content font-bold text-2xl md:text-3xl text-center">
+      <h2 data-aos="zoom-in-right" className="text-base-content font-bold text-2xl md:text-3xl text-center">
         Take A Challenge
       </h2>
-      <div className="flex items-center justify-center mt-5">
+      <div data-aos="zoom-in" className="flex items-center justify-center mt-5">
         <div className="rounded md:w-[50%] mx-auto hover:shadow-lg transition-all duration-500 shadow p-4">
           <div className="flex flex-col mb-6 gap-1">
             <img

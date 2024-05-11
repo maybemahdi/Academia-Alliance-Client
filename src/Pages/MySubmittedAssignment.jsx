@@ -20,7 +20,7 @@ const MySubmittedAssignment = () => {
   });
   if (isLoading) return <Loader />;
   return (
-    <div className="my-20 min-h-[calc(100vh-600px)]">
+    <div data-aos="zoom-in-right" className="my-20 min-h-[calc(100vh-600px)]">
       <ScrollRestoration/>
       <h2 className="text-base-content font-bold text-2xl md:text-3xl text-center">
         My Submission
@@ -55,9 +55,7 @@ const MySubmittedAssignment = () => {
                 <td className="font-bold">{d.marks}</td>
                 <td>
                   <p
-                    className={`w-fit px-2 py-1 font-semibold rounded-[20px] ${
-                      d.obtainedMarks ? "bg-green-600" : "bg-yellow-600"
-                    }`}
+                    className={`w-fit px-2 py-1 font-semibold rounded-[20px]`}
                   >
                     {d.obtainedMarks ? d.obtainedMarks : "Pending"}
                   </p>
@@ -89,7 +87,7 @@ const MySubmittedAssignment = () => {
             <p
               className={`w-fit px-2 text-lg py-1 mb-10 mx-auto font-semibold rounded-[20px]`}
             >
-              {modalData?.feedback ? modalData?.feedback : "Pending..."}
+              {modalData?.feedback ? modalData?.feedback : "Result Coming..."}
             </p>
           </div>
         </dialog>

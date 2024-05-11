@@ -51,10 +51,10 @@ const UpdatedAssignment = () => {
   return (
     <div className="my-10">
       <ScrollRestoration/>
-      <h2 className="text-base-content font-bold text-2xl md:text-3xl text-center">
+      <h2 data-aos="zoom-in-right" className="text-base-content font-bold text-2xl md:text-3xl text-center">
         Update An Assignment
       </h2>
-      <form
+      <form data-aos="zoom-in-right"
         onSubmit={handleUpdateAssignment}
         className="my-10 md:w-[80%] mx-auto"
       >

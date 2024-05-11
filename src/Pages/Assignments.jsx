@@ -4,6 +4,11 @@ import axios from "axios";
 import useAuth from "../Hooks/useAuth";
 import Loader from "../Components/Loader";
 import { ScrollRestoration } from "react-router-dom";
+// import AOS from "aos";
+// import "aos/dist/aos.css";
+// AOS.init({
+//   duration: 1200,
+// });
 
 const Assignments = () => {
   const { refetch, setRefetch } = useState(false);
@@ -47,12 +52,13 @@ const Assignments = () => {
   if (loading) return <Loader />;
   return (
     <div className="my-10">
-      <ScrollRestoration/>
+      <ScrollRestoration />
       <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-        <h2 className="text-base-content font-bold text-2xl md:text-3xl text-center">
+        <h2 data-aos="zoom-in-right" className="text-base-content font-bold text-2xl md:text-3xl text-center">
           All Assignment
         </h2>
         <select
+         data-aos="zoom-in-right"
           onChange={(e) => {
             setFilter(e.target.value);
             setCurrentPage(1);
@@ -68,6 +74,7 @@ const Assignments = () => {
           <option value="hard">Hard</option>
         </select>
         <button
+         data-aos="zoom-in-right"
           onClick={handleReset}
           className="hover:bg-[#CA8787] rounded font-semibold hover:border-[#CA8787] transition-all duration-300 px-4 py-2 border border-black"
         >
@@ -84,7 +91,7 @@ const Assignments = () => {
           />
         ))}
       </div>
-      <div className="flex justify-center mt-12">
+      <div data-aos="zoom-in" className="flex justify-center mt-12">
         {/* previous btn */}
         <button
           disabled={currentPage === 1}

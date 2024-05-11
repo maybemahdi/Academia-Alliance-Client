@@ -6,8 +6,9 @@ import { RxCross2 } from "react-icons/rx";
 import logo from "../../src/assets/logo.png";
 import toast from "react-hot-toast";
 
+
 const Nav = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut, loading } = useContext(AuthContext);
   const [theme, setTheme] = useState("light");
   const [openNav, setOpenNav] = useState(false);
   const toggleNav = () => {
@@ -214,15 +215,15 @@ const Nav = () => {
       </li>
     </>
   );
-
+if(loading) return <div className="bg-[#A87676] rounded-none w-full h-24"></div>;
   return (
     <div className="bg-[#A87676] z-20">
       <div
         className={`transition-all z-20 duration-500 py-5 ${
-          openNav ? "mb-[230px]" : ""
+          openNav ? "mb-[280px]" : ""
         }`}
       >
-        <div data-aos="zoom-in" className="navbar w-[90%] mx-auto">
+        <div className="navbar w-[90%] mx-auto">
           <div className="navbar-start">
             {/* <div className="dropdown -ml-[30px] md:m-0">
             <div tabIndex={0} role="button" className="btn z-20 btn-ghost lg:hidden">
@@ -264,11 +265,11 @@ const Nav = () => {
             >
               <ul className="menu">{navLinksB}</ul>
             </div>
-            <Link className="">
+            <Link data-aos="zoom-in-right" className="">
               <img className="w-40 -ml-5 md:p-0" src={logo} alt="" />
             </Link>
           </div>
-          <div className="navbar-center hidden lg:flex">
+          <div data-aos="zoom-in-right" className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal font-semibold px-1 gap-6">
               {navLinks}
             </ul>
@@ -317,7 +318,10 @@ const Nav = () => {
                     tabIndex={0}
                     className="mt-3 z-20 p-3 space-y-2 shadow menu menu-sm dropdown-content bg-base-100 rounded w-56"
                   >
-                    <Link to="/my-attempt" className={`py-3 bg-[#ddd] text-center font-semibold transition-all duration-300 hover:bg-[#E1ACAC] rounded`}>
+                    <Link
+                      to="/my-attempt"
+                      className={`py-3 bg-[#ddd] text-center font-semibold transition-all duration-300 hover:bg-[#E1ACAC] rounded`}
+                    >
                       My Attempt
                     </Link>
                     <button

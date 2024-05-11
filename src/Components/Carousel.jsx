@@ -16,7 +16,7 @@ import Slide from "./Slide";
 
 export default function Carousel() {
   return (
-    <div className="container my-8 mx-auto">
+    <div data-aos="zoom-in" className="container my-8 mx-auto">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}

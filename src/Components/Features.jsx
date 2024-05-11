@@ -2,12 +2,12 @@ const Features = () => {
   return (
     <section className="text-base-content">
       <div className="container py-10 mx-auto">
-        <h1 className="text-2xl text-center font-semibold capitalize lg:text-3xl ">
+        <h1 data-aos="zoom-in-right" className="text-2xl text-center font-semibold capitalize lg:text-3xl ">
           Explore our <br /> awesome{" "}
           <span className="text-[#CA8787]">Features</span>
         </h1>
 
-        <p className="mt-4 text-center md:w-[70%] mx-auto xl:mt-6">
+        <p data-aos="zoom-in-right" className="mt-4 text-center md:w-[70%] mx-auto xl:mt-6">
           Embark on a journey of knowledge with our comprehensive online study
           platform. Access diverse courses, expert guidance, and interactive
           resources to enhance your learning experience and achieve your
@@ -15,7 +15,7 @@ const Features = () => {
         </p>
 
         <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3">
-          <div className="p-8 space-y-3 border-2 border-[#CA8787] rounded-xl">
+          <div data-aos="flip-down" className="p-8 space-y-3 border-2 border-[#CA8787] rounded-xl">
             <span className="inline-block text-[#CA8787]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +46,7 @@ const Features = () => {
               lessons to reinforce understanding and make learning enjoyable.
             </p>
           </div>
-          <div className="p-8 space-y-3 border-2 border-[#CA8787] rounded-xl">
+          <div data-aos="flip-down" className="p-8 space-y-3 border-2 border-[#CA8787] rounded-xl">
             <span className="inline-block text-[#CA8787]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +78,7 @@ const Features = () => {
               areas for improvement.
             </p>
           </div>
-          <div className="p-8 space-y-3 border-2 border-[#CA8787] rounded-xl">
+          <div data-aos="flip-down" className="p-8 space-y-3 border-2 border-[#CA8787] rounded-xl">
             <span className="inline-block text-[#CA8787]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -3,14 +3,14 @@ import logo from "../../src/assets/logo.png";
 const Footer = () => {
   return (
     <footer className="footer mt-16 footer-center p-10 bg-[#A87676] text-black rounded">
-      <img className="w-40" src={logo} alt="" />
-      <nav className="grid grid-flow-col font-semibold gap-4">
+      <img data-aos="zoom-in-right" className="w-40" src={logo} alt="" />
+      <nav data-aos="zoom-in-right" className="grid grid-flow-col font-semibold gap-4">
         <a className="link link-hover">About us</a>
         <a className="link link-hover">Contact</a>
         <a className="link link-hover">Jobs</a>
         <a className="link link-hover">Press kit</a>
       </nav>
-      <nav>
+      <nav data-aos="zoom-in-right">
         <div className="grid grid-flow-col gap-4">
           <a>
             <svg
@@ -47,7 +47,7 @@ const Footer = () => {
           </a>
         </div>
       </nav>
-      <aside>
+      <aside data-aos="zoom-in-right">
         <p>
           Copyright © 2024 - All right reserved by{" "}
           <span className="font-bold text-[#E1ACAC]">Academia Alliance</span>

@@ -62,7 +62,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex justify-center my-10 items-center min-h-[calc(100vh-306px)]">
+    <div data-aos="zoom-in-right" className="flex justify-center my-10 items-center min-h-[calc(100vh-306px)]">
       <div className="flex gap-10 w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg  lg:max-w-4xl ">
         <div
           className="hidden bg-cover bg-center lg:block lg:w-1/2"

@@ -20,7 +20,7 @@ const SubmittedAssignments = () => {
   return (
     <div className="my-20 min-h-[calc(100vh-500px)]">
       <ScrollRestoration/>
-      <h2 className="text-base-content font-bold text-2xl md:text-3xl text-center">
+      <h2 data-aos="zoom-in-right" className="text-base-content font-bold text-2xl md:text-3xl text-center">
         All Submitted Assignments Here
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-16">
