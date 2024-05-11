@@ -1,12 +1,15 @@
 import { FaUserAlt } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import login from "../assets/login.png"
+import login from "../assets/login.png";
 import Loader from "../Components/Loader";
-import useAuth from "../Hooks/useAuth"
+import useAuth from "../Hooks/useAuth";
+import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
+import { useState } from "react";
 
 const Login = () => {
   const { signIn, googleLogin, loading, setLoading } = useAuth();
+  const [open, setOpen] = useState(false);
   // const emailRef = useRef(); // Add useRef for email input
   const navigate = useNavigate();
   const location = useLocation();
@@ -27,6 +30,8 @@ const Login = () => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
+    if (!email) return toast.error("You Must Enter your Email");
+    if (!password) return toast.error("You Must Enter your Password");
     signIn(email, password)
       .then((res) => {
         console.log(res.user);
@@ -132,7 +137,7 @@ const Login = () => {
               />
             </div>
 
-            <div className="mt-4">
+            <div className="mt-4 relative">
               <div className="flex justify-between">
                 <label
                   className="block mb-2 text-sm font-medium text-gray-600 "
@@ -147,9 +152,15 @@ const Login = () => {
                 autoComplete="current-password"
                 name="password"
                 placeholder="Your Password"
-                className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg    focus:border-blue-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-blue-300"
-                type="password"
+                className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg focus:border-blue-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-blue-300"
+                type={open ? "text" : "password"}
               />
+              <span
+                className="absolute bottom-3 right-4 cursor-pointer text-xl"
+                onClick={() => setOpen(!open)}
+              >
+                {open ? <IoEyeOutline /> : <IoEyeOffOutline />}
+              </span>
             </div>
             <div className="mt-6">
               <button

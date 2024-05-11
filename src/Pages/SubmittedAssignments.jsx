@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import Loader from "../Components/Loader";
 import PdfPreview from "../Components/PdfPreview";
+import { ScrollRestoration } from "react-router-dom";
 
 const SubmittedAssignments = () => {
   const { isLoading, data } = useQuery({
@@ -18,6 +19,7 @@ const SubmittedAssignments = () => {
   console.log(data)
   return (
     <div className="my-20 min-h-[calc(100vh-500px)]">
+      <ScrollRestoration/>
       <h2 className="text-base-content font-bold text-2xl md:text-3xl text-center">
         All Submitted Assignments Here
       </h2>

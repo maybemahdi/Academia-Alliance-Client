@@ -1,18 +1,20 @@
 import { useEffect, useState } from "react";
 import AssignmentCard from "../Components/AssignmentCard";
-import Loader from "../Components/Loader";
-import useRefetch from "../Hooks/useRefetch";
 import axios from "axios";
+import useAuth from "../Hooks/useAuth";
+import Loader from "../Components/Loader";
+import { ScrollRestoration } from "react-router-dom";
 
 const Assignments = () => {
-  const { isLoading, refetch } = useRefetch();
+  const { refetch, setRefetch } = useState(false);
+  const { loading } = useAuth();
   const [assignments, setAssignments] = useState([]);
   const [filter, setFilter] = useState("");
   const [itemsPerPage, setItemsPerPage] = useState(3);
   const [count, setCount] = useState(0);
   const numberOfPages = Math.ceil(count / itemsPerPage);
   const [currentPage, setCurrentPage] = useState(1);
-  
+
   useEffect(() => {
     const getData = async () => {
       const { data } = await axios.get(
@@ -23,7 +25,7 @@ const Assignments = () => {
       setAssignments(data);
     };
     getData();
-  }, [currentPage, itemsPerPage, filter]);
+  }, [currentPage, itemsPerPage, filter, refetch]);
 
   useEffect(() => {
     const getCount = async () => {
@@ -38,10 +40,14 @@ const Assignments = () => {
   const handlePagination = (val) => {
     setCurrentPage(val);
   };
+  const handleReset = () => {
+    setFilter("");
+  };
   const pages = [...Array(numberOfPages).keys()].map((element) => element + 1);
-  if (isLoading) return <Loader />;
+  if (loading) return <Loader />;
   return (
     <div className="my-10">
+      <ScrollRestoration/>
       <div className="flex flex-col md:flex-row items-center justify-center gap-8">
         <h2 className="text-base-content font-bold text-2xl md:text-3xl text-center">
           All Assignment
@@ -54,17 +60,28 @@ const Assignments = () => {
           value={filter}
           name="difficulty"
           id="difficulty"
-          className="border p-4 rounded-lg"
+          className="border px-4 py-3 cursor-pointer rounded-lg"
         >
           <option value="">Filter By Difficulty</option>
           <option value="easy">Easy</option>
           <option value="medium">Medium</option>
           <option value="hard">Hard</option>
         </select>
+        <button
+          onClick={handleReset}
+          className="hover:bg-[#CA8787] rounded font-semibold hover:border-[#CA8787] transition-all duration-300 px-4 py-2 border border-black"
+        >
+          Reset
+        </button>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-10">
         {assignments.map((a) => (
-          <AssignmentCard key={a._id} assignment={a} refetch={refetch} />
+          <AssignmentCard
+            key={a._id}
+            assignment={a}
+            assignments={assignments}
+            setAssignments={setAssignments}
+          />
         ))}
       </div>
       <div className="flex justify-center mt-12">

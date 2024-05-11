@@ -1,4 +1,4 @@
-import { useLoaderData, useNavigate, useParams } from "react-router-dom";
+import { ScrollRestoration, useLoaderData, useNavigate, useParams } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useState } from "react";
@@ -50,6 +50,7 @@ const UpdatedAssignment = () => {
   };
   return (
     <div className="my-10">
+      <ScrollRestoration/>
       <h2 className="text-base-content font-bold text-2xl md:text-3xl text-center">
         Update An Assignment
       </h2>

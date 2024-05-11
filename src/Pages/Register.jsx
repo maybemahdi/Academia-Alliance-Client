@@ -6,10 +6,13 @@ import { updateProfile } from "firebase/auth";
 import { auth } from "../Firebase/firebase.config";
 import Loader from "../Components/Loader";
 import signUp from "../assets/signUp.png";
+import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
+import { useState } from "react";
 
 const Register = () => {
   const { createUser, loading, setUpdate, googleLogin, update, setLoading } =
     useAuth();
+  const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   const handleFirebaseError = (errorCode) => {
     switch (errorCode) {
@@ -200,7 +203,7 @@ const Register = () => {
               />
             </div>
 
-            <div className="mt-4">
+            <div className="mt-4 relative">
               <div className="flex justify-between">
                 <label
                   className="block mb-2 text-sm font-medium text-gray-600 "
@@ -215,9 +218,15 @@ const Register = () => {
                 autoComplete="current-password"
                 name="password"
                 placeholder="Your Password"
-                className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg    focus:border-blue-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-blue-300"
-                type="password"
+                className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg focus:border-blue-400 focus:ring-opacity-40  focus:outline-none focus:ring focus:ring-blue-300"
+                type={open ? "text" : "password"}
               />
+              <span
+                className="absolute bottom-3 right-4 cursor-pointer text-xl"
+                onClick={() => setOpen(!open)}
+              >
+                {open ? <IoEyeOutline /> : <IoEyeOffOutline />}
+              </span>
             </div>
             <div className="mt-6">
               <button

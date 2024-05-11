@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import Loader from "../Components/Loader";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, ScrollRestoration, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Swal from "sweetalert2";
 
@@ -51,6 +51,7 @@ const PendingAssignment = () => {
   };
   return (
     <div className="my-20 min-h-[calc(100vh-600px)]">
+      <ScrollRestoration/>
       <h2 className="text-base-content font-bold my-20 text-2xl md:text-3xl text-center">
         All Pending Assignments
       </h2>

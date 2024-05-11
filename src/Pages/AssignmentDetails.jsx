@@ -1,4 +1,4 @@
-import { Link, useLoaderData, useNavigate } from "react-router-dom";
+import { Link, ScrollRestoration, useLoaderData, useNavigate } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -53,6 +53,7 @@ const AssignmentDetails = () => {
   };
   return (
     <div className="my-10">
+      <ScrollRestoration/>
       <h2 className="text-base-content font-bold text-2xl md:text-3xl text-center">
         Take A Challenge
       </h2>
