@@ -50,7 +50,7 @@ const UpdatedAssignment = () => {
   };
   return (
     <div className="my-10">
-      <h2 className="text-base-content font-bold text-3xl text-center">
+      <h2 className="text-base-content font-bold text-2xl md:text-3xl text-center">
         Update An Assignment
       </h2>
       <form

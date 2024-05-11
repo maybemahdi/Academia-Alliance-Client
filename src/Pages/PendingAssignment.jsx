@@ -51,7 +51,7 @@ const PendingAssignment = () => {
   };
   return (
     <div className="my-20">
-      <h2 className="text-base-content font-bold my-20 text-3xl text-center">
+      <h2 className="text-base-content font-bold my-20 text-2xl md:text-3xl text-center">
         All Pending Assignments
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-10">

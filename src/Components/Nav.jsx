@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { HiMiniBars3CenterLeft } from "react-icons/hi2";
 import { RxCross2 } from "react-icons/rx";
-import logo from "../../src/assets/logo.png"
+import logo from "../../src/assets/logo.png";
 import toast from "react-hot-toast";
 
 const Nav = () => {
@@ -84,6 +84,22 @@ const Nav = () => {
           Pending Assignments
         </NavLink>
       </li>
+      {user && (
+        <li>
+          <NavLink
+            className={({ isActive, isPending }) =>
+              isPending
+                ? "pending"
+                : isActive
+                ? "rounded-none border border-black focus:bg-[#8e914a00] bg-[#ffffff00] focus:text-[#000000] text-[#000000]"
+                : "text-black no-underline"
+            }
+            to={"/submitted-assignments"}
+          >
+            Submitted Assignments
+          </NavLink>
+        </li>
+      )}
     </>
   );
   const navLinksB = (
@@ -144,6 +160,22 @@ const Nav = () => {
           Pending Assignments
         </NavLink>
       </li>
+      {user && (
+        <li>
+          <NavLink
+            className={({ isActive, isPending }) =>
+              isPending
+                ? "pending"
+                : isActive
+                ? "rounded-none border border-black focus:bg-[#8e914a00] bg-[#ffffff00] focus:text-[#000000] text-[#000000]"
+                : "text-black no-underline"
+            }
+            to={"/submitted-assignments"}
+          >
+            Submitted Assignments
+          </NavLink>
+        </li>
+      )}
     </>
   );
 

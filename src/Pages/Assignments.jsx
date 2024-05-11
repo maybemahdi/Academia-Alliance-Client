@@ -10,7 +10,7 @@ const { isLoading, refetch, data : assignments } = useRefetch()
   return (
     <div className="my-10">
       <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-      <h2 className="text-base-content font-bold text-3xl text-center">
+      <h2 className="text-base-content font-bold text-2xl md:text-3xl text-center">
         All Assignment
       </h2>
         <select

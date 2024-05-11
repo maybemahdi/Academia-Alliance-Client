@@ -18,7 +18,7 @@ const MySubmittedAssignment = () => {
   if (isLoading) return <Loader />;
   return (
     <div className="my-40">
-      <h2 className="text-base-content font-bold text-3xl text-center">
+      <h2 className="text-base-content font-bold text-2xl md:text-3xl text-center">
         My Submission
       </h2>
       <div className="overflow-x-auto my-10">

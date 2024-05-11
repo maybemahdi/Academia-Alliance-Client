@@ -53,7 +53,7 @@ const AssignmentDetails = () => {
   };
   return (
     <div className="my-10">
-      <h2 className="text-base-content font-bold text-3xl text-center">
+      <h2 className="text-base-content font-bold text-2xl md:text-3xl text-center">
         Take A Challenge
       </h2>
       <div className="flex items-center justify-center mt-5">
