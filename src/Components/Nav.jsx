@@ -56,34 +56,38 @@ const Nav = () => {
           Assignments
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          className={({ isActive, isPending }) =>
-            isPending
-              ? "pending"
-              : isActive
-              ? "rounded-none border border-black focus:bg-[#8e914a00] bg-[#ffffff00] focus:text-[#000000] text-[#000000]"
-              : "text-black no-underline"
-          }
-          to={"/create-assignment"}
-        >
-          Create Assignment
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          className={({ isActive, isPending }) =>
-            isPending
-              ? "pending"
-              : isActive
-              ? "rounded-none border border-black focus:bg-[#8e914a00] bg-[#ffffff00] focus:text-[#000000] text-[#000000]"
-              : "text-black no-underline"
-          }
-          to={"/pending-assignments"}
-        >
-          Pending Assignments
-        </NavLink>
-      </li>
+      {user && (
+        <li>
+          <NavLink
+            className={({ isActive, isPending }) =>
+              isPending
+                ? "pending"
+                : isActive
+                ? "rounded-none border border-black focus:bg-[#8e914a00] bg-[#ffffff00] focus:text-[#000000] text-[#000000]"
+                : "text-black no-underline"
+            }
+            to={"/create-assignment"}
+          >
+            Create Assignment
+          </NavLink>
+        </li>
+      )}
+      {user && (
+        <li>
+          <NavLink
+            className={({ isActive, isPending }) =>
+              isPending
+                ? "pending"
+                : isActive
+                ? "rounded-none border border-black focus:bg-[#8e914a00] bg-[#ffffff00] focus:text-[#000000] text-[#000000]"
+                : "text-black no-underline"
+            }
+            to={"/pending-assignments"}
+          >
+            Pending Assignments
+          </NavLink>
+        </li>
+      )}
       {user && (
         <li>
           <NavLink
@@ -132,34 +136,38 @@ const Nav = () => {
           Assignments
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          className={({ isActive, isPending }) =>
-            isPending
-              ? "pending"
-              : isActive
-              ? "rounded-none border border-black focus:bg-[#8e914a00] bg-[#ffffff00] focus:text-[#000000] text-[#000000]"
-              : "text-black no-underline"
-          }
-          to={"/create-assignment"}
-        >
-          Create Assignment
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          className={({ isActive, isPending }) =>
-            isPending
-              ? "pending"
-              : isActive
-              ? "rounded-none border border-black focus:bg-[#8e914a00] bg-[#ffffff00] focus:text-[#000000] text-[#000000]"
-              : "text-black no-underline"
-          }
-          to={"/pending-assignments"}
-        >
-          Pending Assignments
-        </NavLink>
-      </li>
+      {user && (
+        <li>
+          <NavLink
+            className={({ isActive, isPending }) =>
+              isPending
+                ? "pending"
+                : isActive
+                ? "rounded-none border border-black focus:bg-[#8e914a00] bg-[#ffffff00] focus:text-[#000000] text-[#000000]"
+                : "text-black no-underline"
+            }
+            to={"/create-assignment"}
+          >
+            Create Assignment
+          </NavLink>
+        </li>
+      )}
+      {user && (
+        <li>
+          <NavLink
+            className={({ isActive, isPending }) =>
+              isPending
+                ? "pending"
+                : isActive
+                ? "rounded-none border border-black focus:bg-[#8e914a00] bg-[#ffffff00] focus:text-[#000000] text-[#000000]"
+                : "text-black no-underline"
+            }
+            to={"/pending-assignments"}
+          >
+            Pending Assignments
+          </NavLink>
+        </li>
+      )}
       {user && (
         <li>
           <NavLink
@@ -176,6 +184,34 @@ const Nav = () => {
           </NavLink>
         </li>
       )}
+      <li>
+        <NavLink
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "pending"
+              : isActive
+              ? "rounded-none border border-black focus:bg-[#8e914a00] bg-[#ffffff00] focus:text-[#000000] text-[#000000]"
+              : "text-black no-underline"
+          }
+          to={"/login"}
+        >
+          Login
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "pending"
+              : isActive
+              ? "rounded-none border border-black focus:bg-[#8e914a00] bg-[#ffffff00] focus:text-[#000000] text-[#000000]"
+              : "text-black no-underline"
+          }
+          to={"/register"}
+        >
+          Register
+        </NavLink>
+      </li>
     </>
   );
 
@@ -214,7 +250,7 @@ const Nav = () => {
           </div> */}
             <button
               onClick={toggleNav}
-              className="block md:hidden cursor-pointer -ml-[18px] mr-3 border border-[#8b966700] bg-[#fff0] p-2 rounded text-gray-600 hover:bg-[#fff0] focus:outline-none"
+              className="block md:hidden cursor-pointer -ml-[18px] mr-3 border border-[#8b966700] bg-[#fff0] p-2 rounded text-black hover:bg-[#fff0] focus:outline-none"
             >
               <HiMiniBars3CenterLeft
                 className={`w-7 h-7 ${openNav ? "hidden" : "block"}`}
@@ -281,27 +317,16 @@ const Nav = () => {
                     tabIndex={0}
                     className="mt-3 z-20 p-3 space-y-2 shadow menu menu-sm dropdown-content bg-base-100 rounded w-56"
                   >
-                    <li className="py-3 bg-[#ddd] font-semibold transition-all duration-300 hover:bg-[#E1ACAC] rounded">
-                      <Link
-                        className={({ isActive, isPending }) =>
-                          isPending
-                            ? "pending"
-                            : isActive
-                            ? "rounded-none py-3 text-[#000000]"
-                            : "text-black hover:bg-[#E1ACAC] transition-all duration-300 hover:bg-[#e1acac00] no-underline"
-                        }
-                        to="/my-attempt"
-                      >
-                        My Attempted Assignment
-                      </Link>
-                    </li>
+                    <Link to="/my-attempt" className={`py-3 bg-[#ddd] text-center font-semibold transition-all duration-300 hover:bg-[#E1ACAC] rounded`}>
+                      My Attempt
+                    </Link>
                     <button
                       onClick={() => {
                         logOut().then(() =>
                           toast.success("Logged out successfully")
                         );
                       }}
-                      className="bg-[#b9947000] rounded font-semibold border border-black no-underline px-3 py-2 cursor-pointer transition-all duration-300 text-black hover:bg-[#E1ACAC]"
+                      className="bg-[#b9947000] rounded font-semibold border border-black no-underline px-3 py-2 cursor-pointer transition-all duration-300 text-black hover:border-[#E1ACAC] hover:bg-[#E1ACAC]"
                     >
                       Log Out
                     </button>
