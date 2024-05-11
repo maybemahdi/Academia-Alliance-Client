@@ -17,7 +17,7 @@ const MySubmittedAssignment = () => {
   });
   if (isLoading) return <Loader />;
   return (
-    <div className="my-40">
+    <div className="my-20 min-h-[calc(100vh-600px)]">
       <h2 className="text-base-content font-bold text-2xl md:text-3xl text-center">
         My Submission
       </h2>

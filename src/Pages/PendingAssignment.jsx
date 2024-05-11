@@ -50,7 +50,7 @@ const PendingAssignment = () => {
       });
   };
   return (
-    <div className="my-20">
+    <div className="my-20 min-h-[calc(100vh-600px)]">
       <h2 className="text-base-content font-bold my-20 text-2xl md:text-3xl text-center">
         All Pending Assignments
       </h2>
