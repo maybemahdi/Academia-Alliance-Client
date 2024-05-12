@@ -6,9 +6,11 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
 import { ScrollRestoration } from "react-router-dom";
+import useAxiosSecure from "../Hooks/useAxiosSecure";
 
 const CreateAssignment = () => {
   const { user } = useAuth();
+  const axiosSecure = useAxiosSecure();
   const [startDate, setStartDate] = useState(new Date());
   const handleCreateAssignment = (e) => {
     e.preventDefault();
@@ -48,29 +50,29 @@ const CreateAssignment = () => {
       assignment_creator,
     };
     // console.log(data)
-    axios
-      .post(`${import.meta.env.VITE_API_URL}/add-assignment`, data, {
-        withCredentials: true,
-      })
-      .then((res) => {
-        console.log(res.data);
-        if (res.data.insertedId) {
-          form.reset();
-          Swal.fire({
-            title: "Good job!",
-            text: "You just created an assignment!",
-            icon: "success",
-          });
-        }
-      });
+    axiosSecure.post(`/add-assignment`, data).then((res) => {
+      console.log(res.data);
+      if (res.data.insertedId) {
+        form.reset();
+        Swal.fire({
+          title: "Good job!",
+          text: "You just created an assignment!",
+          icon: "success",
+        });
+      }
+    });
   };
   return (
     <div className="my-10">
-      <ScrollRestoration/>
-      <h2 data-aos="zoom-in-right" className="text-base-content font-bold text-2xl md:text-3xl text-center">
+      <ScrollRestoration />
+      <h2
+        data-aos="zoom-in-right"
+        className="text-base-content font-bold text-2xl md:text-3xl text-center"
+      >
         Create An Assignment
       </h2>
-      <form data-aos="zoom-in-right"
+      <form
+        data-aos="zoom-in-right"
         onSubmit={handleCreateAssignment}
         className="my-10 md:w-[80%] mx-auto"
       >

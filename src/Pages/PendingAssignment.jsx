@@ -4,19 +4,22 @@ import Loader from "../Components/Loader";
 import { Link, ScrollRestoration, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Swal from "sweetalert2";
+import useAuth from "../Hooks/useAuth";
+import useAxiosSecure from "../Hooks/useAxiosSecure";
 
 const PendingAssignment = () => {
+  const { user } = useAuth();
   const queryStatus = "Pending";
   const navigate = useNavigate();
+  const axiosSecure = useAxiosSecure() 
   const [dynamicModalData, setDynamicModalData] = useState([]);
   const { isLoading, refetch, data } = useQuery({
     queryKey: ["pendingAssignments"],
     queryFn: async () => {
-      const { data } = await axios.get(
-        `${
-          import.meta.env.VITE_API_URL
-        }/pending-assignments?status=${queryStatus}`,
-        { withCredentials: true }
+      const { data } = await axiosSecure.get(
+        `/pending-assignments?email=${
+          user?.email
+        }&status=${queryStatus}`
       );
       return data;
     },
@@ -51,11 +54,17 @@ const PendingAssignment = () => {
   };
   return (
     <div className="my-20 min-h-[calc(100vh-600px)]">
-      <ScrollRestoration/>
-      <h2 data-aos="zoom-in-right" className="text-base-content font-bold my-20 text-2xl md:text-3xl text-center">
+      <ScrollRestoration />
+      <h2
+        data-aos="zoom-in-right"
+        className="text-base-content font-bold my-20 text-2xl md:text-3xl text-center"
+      >
         All Pending Assignments
       </h2>
-      <div data-aos="zoom-in" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-10">
+      <div
+        data-aos="zoom-in"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-10"
+      >
         {data.map((d) => (
           <div
             key={d._id}

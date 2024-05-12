@@ -1,19 +1,21 @@
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
+// import axios from "axios";
 import useAuth from "../Hooks/useAuth";
 import Loader from "../Components/Loader";
 import { useState } from "react";
 import { ScrollRestoration } from "react-router-dom";
+import useAxiosSecure from "../Hooks/useAxiosSecure";
 
 const MySubmittedAssignment = () => {
   const { user } = useAuth();
   const [modalData, setModalData] = useState(null);
+  const axiosSecure = useAxiosSecure();
   const { isLoading, refetch, data } = useQuery({
     queryKey: ["mySubmittedAssignment"],
     queryFn: async () => {
-      const { data } = await axios.get(
-        `${import.meta.env.VITE_API_URL}/mySubmitted?email=${user?.email}`,
-        { withCredentials: true }
+      const { data } = await axiosSecure.get(
+        `/mySubmitted?email=${user?.email}`
+        // { withCredentials: true }
       );
       return data;
     },
@@ -21,7 +23,7 @@ const MySubmittedAssignment = () => {
   if (isLoading) return <Loader />;
   return (
     <div data-aos="zoom-in-right" className="my-20 min-h-[calc(100vh-600px)]">
-      <ScrollRestoration/>
+      <ScrollRestoration />
       <h2 className="text-base-content font-bold text-2xl md:text-3xl text-center">
         My Submission
       </h2>
@@ -54,9 +56,7 @@ const MySubmittedAssignment = () => {
                 </td>
                 <td className="font-bold">{d.marks}</td>
                 <td>
-                  <p
-                    className={`w-fit px-2 py-1 font-semibold rounded-[20px]`}
-                  >
+                  <p className={`w-fit px-2 py-1 font-semibold rounded-[20px]`}>
                     {d.obtainedMarks ? d.obtainedMarks : "Pending"}
                   </p>
                 </td>

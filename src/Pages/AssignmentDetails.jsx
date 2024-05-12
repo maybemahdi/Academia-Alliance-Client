@@ -1,11 +1,18 @@
-import { Link, ScrollRestoration, useLoaderData, useNavigate } from "react-router-dom";
+import {
+  Link,
+  ScrollRestoration,
+  useLoaderData,
+  useNavigate,
+} from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
-import axios from "axios";
+// import axios from "axios";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
+import useAxiosSecure from "../Hooks/useAxiosSecure";
 
 const AssignmentDetails = () => {
   const assignment = useLoaderData();
+  const axiosSecure = useAxiosSecure();
   //   const { id } = useParams();
   const navigate = useNavigate();
   const { user } = useAuth();
@@ -35,26 +42,25 @@ const AssignmentDetails = () => {
       examineeName,
     };
     // console.log(data);
-    axios
-      .post(`${import.meta.env.VITE_API_URL}/submit-assignment`, data, {
-        withCredentials: true,
-      })
-      .then((res) => {
-        console.log(res.data);
-        if (res.data.insertedId) {
-          navigate(-1);
-          Swal.fire({
-            title: "Good job!",
-            text: "You just Submitted an Assignment!",
-            icon: "success",
-          });
-        }
-      });
+    axiosSecure.post(`/submit-assignment`, data).then((res) => {
+      console.log(res.data);
+      if (res.data.insertedId) {
+        navigate(-1);
+        Swal.fire({
+          title: "Good job!",
+          text: "You just Submitted an Assignment!",
+          icon: "success",
+        });
+      }
+    });
   };
   return (
     <div className="my-10">
-      <ScrollRestoration/>
-      <h2 data-aos="zoom-in-right" className="text-base-content font-bold text-2xl md:text-3xl text-center">
+      <ScrollRestoration />
+      <h2
+        data-aos="zoom-in-right"
+        className="text-base-content font-bold text-2xl md:text-3xl text-center"
+      >
         Take A Challenge
       </h2>
       <div data-aos="zoom-in" className="flex items-center justify-center mt-5">

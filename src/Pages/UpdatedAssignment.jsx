@@ -1,15 +1,20 @@
-import { ScrollRestoration, useLoaderData, useNavigate, useParams } from "react-router-dom";
+import {
+  ScrollRestoration,
+  useLoaderData,
+  useNavigate,
+  useParams,
+} from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useState } from "react";
-import useAuth from "../Hooks/useAuth";
 import axios from "axios";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../Hooks/useAxiosSecure";
 
 const UpdatedAssignment = () => {
   const assignment = useLoaderData();
   const { id } = useParams();
-  const { user } = useAuth();
+  const axiosSecure = useAxiosSecure();
   const navigate = useNavigate();
   const [startDate, setStartDate] = useState(new Date());
   const handleUpdateAssignment = (e) => {
@@ -31,30 +36,30 @@ const UpdatedAssignment = () => {
       dueDate,
       assignment_creator,
     };
-    axios
-      .put(`${import.meta.env.VITE_API_URL}/update-assignment/${id}`, data, {
-        withCredentials: true,
-      })
-      .then((res) => {
-        console.log(res.data);
-        if (res.data.modifiedCount > 0) {
-          form.reset();
-          Swal.fire({
-            title: "Good job!",
-            text: "You just Updated this assignment!",
-            icon: "success",
-          });
-          navigate("/assignments");
-        }
-      });
+    axiosSecure.put(`/update-assignment/${id}`, data).then((res) => {
+      console.log(res.data);
+      if (res.data.modifiedCount > 0) {
+        form.reset();
+        Swal.fire({
+          title: "Good job!",
+          text: "You just Updated this assignment!",
+          icon: "success",
+        });
+        navigate("/assignments");
+      }
+    });
   };
   return (
     <div className="my-10">
-      <ScrollRestoration/>
-      <h2 data-aos="zoom-in-right" className="text-base-content font-bold text-2xl md:text-3xl text-center">
+      <ScrollRestoration />
+      <h2
+        data-aos="zoom-in-right"
+        className="text-base-content font-bold text-2xl md:text-3xl text-center"
+      >
         Update An Assignment
       </h2>
-      <form data-aos="zoom-in-right"
+      <form
+        data-aos="zoom-in-right"
         onSubmit={handleUpdateAssignment}
         className="my-10 md:w-[80%] mx-auto"
       >
