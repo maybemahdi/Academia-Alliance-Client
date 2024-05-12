@@ -21,9 +21,9 @@ const Layout = () => {
           fontWeight: "bold",
           padding: "5px",
           paddingLeft: "5.9px",
-          borderRadius: "50%",
+          borderRadius: "20%",
           background: "white",
-          boxShadow: "2px 1px 12px 1px rgba(117,110,117,1)",
+          boxShadow: "0px 18px 93px 5px rgba(61,54,61,1)",
         }}
         color="#A87676"
       />
