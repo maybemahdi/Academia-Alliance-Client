@@ -11,7 +11,6 @@ import { ScrollRestoration } from "react-router-dom";
 // });
 
 const Assignments = () => {
-  const { refetch, setRefetch } = useState(false);
   const { loading } = useAuth();
   const [assignments, setAssignments] = useState([]);
   const [filter, setFilter] = useState("");
@@ -30,7 +29,7 @@ const Assignments = () => {
       setAssignments(data);
     };
     getData();
-  }, [currentPage, itemsPerPage, filter, refetch]);
+  }, [currentPage, itemsPerPage, filter]);
 
   useEffect(() => {
     const getCount = async () => {
