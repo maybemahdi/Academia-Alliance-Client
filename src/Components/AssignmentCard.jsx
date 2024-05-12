@@ -4,8 +4,6 @@ import Swal from "sweetalert2";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-
-
 const AssignmentCard = ({ assignment, assignments, setAssignments }) => {
   const { user } = useAuth();
   const {
@@ -50,9 +48,9 @@ const AssignmentCard = ({ assignment, assignments, setAssignments }) => {
     });
   };
   return (
-    <div 
-    data-aos="zoom-in-right"
-      className="rounded hover:scale-105 hover:shadow-2xl transition-all duration-500 shadow-md p-4"
+    <div
+      data-aos="zoom-in-right"
+      className="rounded hover:scale-105 hover:shadow-2xl transition-all duration-700 shadow-md p-4"
     >
       <div className="flex flex-col mb-6 gap-1">
         <img className="h-[250px] w-full rounded" src={thumbnail} alt="" />

@@ -5,7 +5,6 @@
 
 ### Live Site URL: 
 * Firebase : https://academia-alliance.web.app/ 
-* Netlify  : 
 
 ## Features and Characteristics:
 * User authentication system
