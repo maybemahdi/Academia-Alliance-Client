@@ -278,7 +278,7 @@ const Nav = () => {
             </ul>
           </div>
           <div className="navbar-end relative gap-4">
-            <label className="cursor-pointer grid place-items-center">
+            <label data-aos="zoom-in-right" className="cursor-pointer grid place-items-center">
               <input
               onChange={handleTheme}
                 type="checkbox"
