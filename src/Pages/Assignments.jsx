@@ -47,6 +47,7 @@ const Assignments = () => {
   };
   const handleReset = () => {
     setFilter("");
+    setCurrentPage(1);
   };
   const pages = [...Array(numberOfPages).keys()].map((element) => element + 1);
   if (loading) return <Loader />;
