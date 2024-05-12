@@ -353,7 +353,7 @@ const Nav = () => {
               )}
             </div>
             {!user && (
-              <div className="md:flex hidden gap-4">
+              <div data-aos="zoom-in-right" className="md:flex hidden gap-4">
                 <Link
                   to={"/login"}
                   className="bg-[#b9947000] font-semibold border border-black no-underline px-3 py-2 cursor-pointer transition-all duration-300 text-black hover:bg-[#E1ACAC]"
