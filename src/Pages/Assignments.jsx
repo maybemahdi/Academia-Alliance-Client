@@ -54,11 +54,14 @@ const Assignments = () => {
     <div className="my-10">
       <ScrollRestoration />
       <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-        <h2 data-aos="zoom-in-right" className="text-base-content font-bold text-2xl md:text-3xl text-center">
+        <h2
+          data-aos="zoom-in-right"
+          className="text-base-content font-bold text-2xl md:text-3xl text-center"
+        >
           All Assignment
         </h2>
         <select
-         data-aos="zoom-in-right"
+          data-aos="zoom-in-right"
           onChange={(e) => {
             setFilter(e.target.value);
             setCurrentPage(1);
@@ -74,7 +77,7 @@ const Assignments = () => {
           <option value="hard">Hard</option>
         </select>
         <button
-         data-aos="zoom-in-right"
+          data-aos="zoom-in-right"
           onClick={handleReset}
           className="hover:bg-[#CA8787] rounded font-semibold hover:border-[#CA8787] transition-all duration-300 px-4 py-2 border border-black"
         >

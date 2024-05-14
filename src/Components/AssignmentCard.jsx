@@ -60,7 +60,7 @@ const AssignmentCard = ({ assignment, assignments, setAssignments }) => {
         <p className="text-lg font-semibold">Full Marks: {marks}</p>
         <p className="text-lg font-semibold">Difficulty Level: {difficulty}</p>
       </div>
-      <div className="flex gap-4">
+      <div className="flex flex-wrap gap-4">
         <button
           onClick={() => handleDelete(_id, assignment_creator)}
           className="btn btn-outline hover:bg-[#CA8787] hover:border-[#CA8787]"

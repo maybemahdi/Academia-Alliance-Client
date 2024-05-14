@@ -70,7 +70,7 @@ const PendingAssignment = () => {
             key={d._id}
             className="rounded cursor-pointer hover:scale-105 transition-all duration-500  shadow-xl p-4"
           >
-            <div className="flex flex-col mb-6 gap-1">
+            <div className="flex flex-col mb-6 gap-1 h-24">
               <h3 className="mt-4 text-xl font-semibold">
                 Title: {d.assignment_title}
               </h3>
@@ -78,16 +78,16 @@ const PendingAssignment = () => {
               <p className="text-lg font-semibold">
                 Examinee Name: {d.examineeName}
               </p>
+              </div>
               <button
                 onClick={() => {
                   handleDynamicData(d);
                   document.getElementById("my_modal_2").showModal();
                 }}
-                className="btn btn-outline mt-5 hover:bg-[#CA8787] hover:border-[#CA8787]"
+                className="btn btn-block btn-outline mt-5 hover:bg-[#CA8787] hover:border-[#CA8787]"
               >
                 Give Mark
               </button>
-            </div>
           </div>
         ))}
         <div>
