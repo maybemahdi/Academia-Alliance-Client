@@ -2,7 +2,7 @@ const Faq = () => {
   return (
     <div className="my-10">
       <h1 data-aos="zoom-in-right" className="text-2xl text-center font-semibold capitalize lg:text-3xl ">
-        Now More about <span className="text-[#CA8787]">Us</span>
+        Frequently Asked <span className="text-[#CA8787]">Questions</span>
       </h1>
 
       <p data-aos="zoom-in-right" className="mt-4 text-center md:w-[70%] mx-auto xl:mt-6">

@@ -12,6 +12,7 @@ import AssignmentDetails from "../Pages/AssignmentDetails";
 import MySubmittedAssignment from "../Pages/MySubmittedAssignment";
 import PendingAssignment from "../Pages/PendingAssignment";
 import SubmittedAssignments from "../Pages/SubmittedAssignments";
+import Payment from "../Pages/Payment";
 
 export const router = createBrowserRouter([
   {
@@ -87,6 +88,10 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      {
+        path: "/fund",
+        element: <Payment/>
+      }
     ],
   },
 ]);

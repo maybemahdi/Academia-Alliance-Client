@@ -82,9 +82,9 @@ const Nav = () => {
                 ? "rounded-none border border-black focus:bg-[#8e914a00] bg-[#ffffff00] focus:text-[#000000] text-[#000000]"
                 : "text-black no-underline"
             }
-            to={"/pending-assignments"}
+            to={"/submitted-assignments"}
           >
-            Pending Assignments
+            Submitted Assignments
           </NavLink>
         </li>
       )}
@@ -98,9 +98,9 @@ const Nav = () => {
                 ? "rounded-none border border-black focus:bg-[#8e914a00] bg-[#ffffff00] focus:text-[#000000] text-[#000000]"
                 : "text-black no-underline"
             }
-            to={"/submitted-assignments"}
+            to={"/fund"}
           >
-            Submitted Assignments
+            Collecting Fund
           </NavLink>
         </li>
       )}
@@ -273,14 +273,17 @@ const Nav = () => {
             data-aos="zoom-in-right"
             className="navbar-center hidden lg:flex"
           >
-            <ul className="menu menu-horizontal font-semibold px-1 gap-6">
+            <ul className="menu menu-horizontal font-semibold px-1 gap-3">
               {navLinks}
             </ul>
           </div>
           <div className="navbar-end relative gap-4">
-            <label data-aos="zoom-in-right" className="cursor-pointer grid place-items-center">
+            <label
+              data-aos="zoom-in-right"
+              className="cursor-pointer grid place-items-center"
+            >
               <input
-              onChange={handleTheme}
+                onChange={handleTheme}
                 type="checkbox"
                 value="synthwave"
                 className="toggle h-7 w-[54px] theme-controller row-start-1 col-start-1 col-span-2"
@@ -338,6 +341,17 @@ const Nav = () => {
                     >
                       My Attempt
                     </Link>
+
+                    {user && (
+                      <li>
+                        <Link
+                          className={`py-3 bg-[#ddd] text-center font-semibold transition-all duration-300 hover:bg-[#E1ACAC] rounded`}
+                          to={"/pending-assignments"}
+                        >
+                          Pending Assignments
+                        </Link>
+                      </li>
+                    )}
                     <button
                       onClick={() => {
                         logOut().then(() =>
