@@ -181,7 +181,7 @@ const CheckoutForm = () => {
             {processing ? (
               <ImSpinner9 className="animate-spin m-auto" size={24} />
             ) : (
-              `Pay ${amount}`
+              `Pay $${amount > 0 ? amount : ""}`
             )}
           </button>
         </div>
